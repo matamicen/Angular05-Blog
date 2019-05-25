@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserComponent } from './components/user/user.component';
 import { PostsComponent } from './components/posts/posts.component';
+import {appRouting} from './app.routes';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { PostsComponent } from './components/posts/posts.component';
    
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    appRouting
   ],
   providers: [],
   bootstrap: [AppComponent]
