@@ -1,3 +1,42 @@
-<p>
-  post works!
-</p>
+<div  style="margin-top: 5px;" >
+ 
+  <div class="card mb-3" style="max-width: 280px;">
+    <div class="row no-gutters">
+      <div class="col-md-4" >
+        <img [src]="postComments.post.avatar" style="width: 60px;margin-top: 5px;margin-left: 5px;" class="card-img" alt="...">
+        <p style="margin-top: 5px;margin-left: 5px;">{{postComments.post.usuario}}</p>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{postComments.post.title}}</h5>
+         <p class="card-text">{{postComments.post.review}}</p>
+          <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+          <!-- <p>  <button type="button" (click)="goToPost(pos.id)" class="btn btn-outline-primary btn-block" >Ver post</button></p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>Comentarios:</p>
+
+  <div class="card mb-3" style="max-width: 280px;" *ngFor="let comm of postComments.results">
+    <div class="row no-gutters">
+      <div class="col-md-4" >
+        <img [src]="comm.usuarioavatar" style="width: 60px;margin-top: 5px;margin-left: 5px;" class="card-img" alt="...">
+        <p style="margin-top: 5px;margin-left: 5px;">{{comm.usuariocomment}}</p>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <!-- <h5 class="card-title">{{postComments.post.title}}</h5> -->
+         <p class="card-text">{{comm.comment}}</p>
+          <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+          <!-- <p>  <button type="button" (click)="goToPost(pos.id)" class="btn btn-outline-primary btn-block" >Ver post</button></p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  </div>
