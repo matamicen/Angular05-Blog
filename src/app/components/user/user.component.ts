@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BlogService} from '../../servicios/blog.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -11,7 +12,7 @@ export class UserComponent implements OnInit {
   private users:any = [];
  
 
-  constructor(private blogservice:BlogService) { }
+  constructor(private router:Router, private blogservice:BlogService) { }
 
   ngOnInit() {
 
@@ -29,5 +30,15 @@ export class UserComponent implements OnInit {
    console.log(this.users);
    console.log('ngOnInit');
   }
+
+  userSelected(id:number,name:string,avatar:string){
+     let loggedUser = { "id":id, "name" :name, "avatar":avatar };
+     this.blogservice.setUserLogged(loggedUser);
+     console.log(loggedUser);
+     this.router.navigate(['/posts']);
+    
+  }
+
+
 
 }

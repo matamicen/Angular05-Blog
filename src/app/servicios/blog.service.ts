@@ -10,6 +10,7 @@ export class BlogService {
     getUsersURL:string = "http://localhost:8080/social/users";
    
     private users:any[] = [];
+    private loggedUser:any = {};
     
     constructor(private http:Http) { 
 
@@ -31,11 +32,17 @@ export class BlogService {
                this.users = res.json().results;
                return res.json();
              }, err => console.log("error: "+err.json()));
-      
-      
-         
-
 
     }
+
+    setUserLogged(user:any) {
+      this.loggedUser = user;
+
+    }
+
+    getUserLogged(){
+        return this.loggedUser;
+    }
+
 
 }
