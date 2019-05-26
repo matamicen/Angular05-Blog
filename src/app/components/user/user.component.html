@@ -1,7 +1,8 @@
-<br>
+
 <div>
-<div class="card" style="width: 120px"  *ngFor="let user of users" >
-    <img [src]="user.avatar"  class="card-img-top" style="width: 100px" alt="...">
+<div class="card" style="width: 120px;margin-top: 15px;"  *ngFor="let user of users" >
+    <img [src]="user.avatar"  class="card-img-top" style="width: 100px;margin-left: auto;
+    margin-right: auto;margin-top: 5px;" alt="...">
     <div class="card-body">
       <h5 class="card-text">{{user.name}}</h5>
     </div>

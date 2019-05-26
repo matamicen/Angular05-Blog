@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class UserComponent implements OnInit {
 
-  private users:any = [];
+
+ private users:any = {};
  
 
   constructor(private router:Router, private blogservice:BlogService) { }
@@ -27,7 +28,7 @@ export class UserComponent implements OnInit {
         console.log(error)
       });
 
-   console.log(this.users);
+   
    console.log('ngOnInit');
   }
 

@@ -11,6 +11,7 @@ import {HttpModule} from '@angular/http';
 
 // Service
 import {BlogService} from './servicios/blog.service';
+import { PostComponent } from './components/post/post.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import {BlogService} from './servicios/blog.service';
     NavbarComponent,
     UserComponent,
     PostsComponent,
+    PostComponent,
    
   ],
   imports: [

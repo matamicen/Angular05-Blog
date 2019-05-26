@@ -1,3 +1,18 @@
-<p>
-  posts works!
-</p>
+<div  style="margin-top: 5px;" >
+<div class="card mb-3" style="max-width: 280px;" *ngFor="let pos of posts">
+  <div class="row no-gutters">
+    <div class="col-md-4" >
+      <img [src]="pos.avatar" style="width: 60px;margin-top: 5px;margin-left: 5px;" class="card-img" alt="...">
+      <p style="margin-top: 5px;margin-left: 5px;">Martin</p>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h6 class="card-title">{{pos.title}}</h6>
+        <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+        <p>  <button type="button" (click)="goToPost(pos.id)" class="btn btn-outline-primary btn-block" >Ver post</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
