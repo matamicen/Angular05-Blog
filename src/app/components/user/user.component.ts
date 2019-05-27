@@ -11,6 +11,7 @@ export class UserComponent implements OnInit {
 
 
  private users:any = {};
+ private show:boolean = false;
  
 
   constructor(private router:Router, private blogservice:BlogService) { }
@@ -21,6 +22,7 @@ export class UserComponent implements OnInit {
    .subscribe(data => {
      console.log(data)
      this.users = data.results;
+     this.show = true;
    },
       error => {
         console.log("fallo el call de la API");
