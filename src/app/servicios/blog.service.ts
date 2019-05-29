@@ -10,6 +10,7 @@ export class BlogService {
     getUsersURL:string = "http://localhost:8080/social/users";
     getPostsURL:string = "http://localhost:8080/social/posts";
     getPostCommentsURL:string = "http://localhost:8080/social/comment";
+    setPostCommentsURL:string = "http://localhost:8080/social/comment";
    
 
     private users:any = {};
@@ -83,6 +84,32 @@ export class BlogService {
          }, err => console.log("error: "+err.json()));
 
 }
+
+setPostComments(idpost:number,iduser:number,comment:string){
+
+  console.log("llama a setPostComments API");
+
+   let header = new Headers({'Content-Type':'application/json'});
+   let body = {
+    "idUser":  iduser,
+    "idPost":  idpost,
+    "comment":  comment
+    }
+ 
+
+  
+
+   return this.http.post(this.setPostCommentsURL, body, {headers: header})
+       .map(res =>{
+        console.log(res);
+         console.log(res.json());
+         console.log("entro positivo REST setPostComments")
+         this.postComments = res.json();
+         return res.json();
+       }, err => console.log("error: "+err.json()));
+
+
+  }
 
 
 }

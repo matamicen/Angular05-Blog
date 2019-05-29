@@ -13,7 +13,7 @@ export class PostComponent implements OnInit {
 
   private postComments:any = {};
   
-  private newComment:String = " ";
+  private newComment:string = " ";
    
 
   constructor(private activatedRoute:ActivatedRoute, private blogservice:BlogService) { 
@@ -48,7 +48,19 @@ export class PostComponent implements OnInit {
     console.log("NgForm forma: ", forma);
     console.log("forma value: ", forma.value);
     console.log("usuario logueado que va a hacer el comentario"+this.blogservice.getUserLogged().name);
-     
+    console.log("this.newComment: "+ this.newComment);
+    
+    this.blogservice.setPostComments(this.postComments.post.id,this.blogservice.getUserLogged().id,this.newComment)
+    .subscribe(data => {
+      console.log(data)
+      console.log("llamo exitosamente a PostComment")
+
+    },
+      error => {
+        console.log("fallo el call de la API PostComment");
+        
+        console.log(error)
+      });
 
 }
 
