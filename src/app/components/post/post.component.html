@@ -36,6 +36,24 @@
     </div>
   </div>
 
+<div>
+  <form (ngSubmit)="guardar(forma)" #forma="ngForm" >
+    <div class="form-group">
+      <label for="exampleInputEmail1">Comment</label>
+      <input type="email" class="form-control" 
+      id="exampleInputEmail1"
+      name="comentario"
+       aria-describedby="emailHelp"
+        placeholder="Enter email"
+        [(ngModel)]="newComment"
+        required
+        #comentario="ngModel">
+     
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Comment</button>
+  </form>
+</div>
 
 
 

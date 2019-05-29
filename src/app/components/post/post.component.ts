@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {BlogService} from '../../servicios/blog.service';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -11,6 +12,9 @@ import {BlogService} from '../../servicios/blog.service';
 export class PostComponent implements OnInit {
 
   private postComments:any = {};
+  
+  private newComment:String = " ";
+   
 
   constructor(private activatedRoute:ActivatedRoute, private blogservice:BlogService) { 
 
@@ -38,5 +42,14 @@ export class PostComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  guardar(forma:NgForm) {
+    console.log("guardo los cambios");
+    console.log("NgForm forma: ", forma);
+    console.log("forma value: ", forma.value);
+    console.log("usuario logueado que va a hacer el comentario"+this.blogservice.getUserLogged().name);
+     
+
+}
 
 }
